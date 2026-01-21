@@ -1,0 +1,270 @@
+:root {
+  --color-blue: #1862ff;
+  --color-bg-gray: #eceff8;
+  --color-text-gray: #6f7481;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h2,
+h3 {
+  font-weight: 400;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+body {
+  background: #f3f4f9;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.container-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 20px;
+}
+
+.option-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-text-gray);
+  width: 100%;
+}
+
+.option-row__check {
+  background-color: var(--color-blue);
+}
+
+.option-row__check:hover {
+  filter: brightness(1.2);
+}
+
+.option-row__icon {
+  background-color: white;
+}
+
+.option-row__check--secondary {
+  background-color: white;
+}
+
+.option-row__check--secondary .option-row__icon {
+  background-color: var(--color-blue);
+}
+
+.option-row__check--secondary:hover {
+  background: var(--color-blue);
+}
+
+.option-row__check:active {
+  background: color-mix(in srgb, var(--color-blue), black 20%);
+}
+
+.option-row__check--secondary:hover .option-row__icon {
+  background-color: white;
+}
+
+.option-row__left {
+  display: flex;
+  align-items: center;
+}
+
+.option-row__check {
+  height: 25px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.option-row__icon {
+  width: 20px;
+  height: 20px;
+  mask: url("assets/plus.svg") no-repeat center;
+}
+
+
+
+.tariffs {
+  position: relative;
+}
+
+.tariffs__background {
+  position: absolute;
+  top: -20px;
+  right: 20%;
+  z-index: -1;
+  height: 180px;
+}
+
+.tariffs__title {
+  font-size: 46px;
+  margin-bottom: 40px;
+}
+
+.tariffs__title-accent {
+  color: var(--color-blue);
+}
+
+.tariffs__cards {
+  margin-bottom: 30px;
+}
+
+.tariffs-card {
+  background: rgba(250, 251, 253, 0.8);
+  border-radius: 10px;
+  padding: 38px 34px 20px 34px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 3px 3px 20px -10px rgba(0, 0, 0, 0.15);
+  border: #fafbfd 1px solid;
+  backdrop-filter: blur(5px);
+}
+
+.tariffs-card__title {
+  margin-bottom: 32px;
+}
+
+.tariffs-card__price {
+  background: var(--color-bg-gray);
+  border-radius: 10px;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  padding: 15px 20px;
+  color: var(--color-blue);
+  margin-bottom: 10px;
+}
+
+.tariffs-card__button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: var(--color-blue);
+  height: 100%;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  transition: all 0.15s ease;
+}
+
+.tariffs-card__button:hover {
+  filter: brightness(1.2);
+}
+
+.tariffs-card__button:active {
+  background: color-mix(in srgb, var(--color-blue), black 10%);
+}
+
+
+.tariffs-card__list {
+  color: var(--color-text-gray);
+}
+
+.tariffs-card__item:last-child {
+  border-bottom: none;
+}
+
+.tariffs-card__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: var(--color-bg-gray) 1px solid;
+}
+
+/*  */
+
+.tariffs__additional {
+  background: var(--color-bg-gray);
+  padding: 25px 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  color: var(--color-text-gray);
+  width: 100%;
+}
+
+
+/*  */
+
+@media (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+
+  .tariffs__title {
+    font-size: 36px;
+  }
+
+  .container {
+    max-width: 960px;
+  }
+
+  .container-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tariffs__background {
+    top: 10px;
+    right: 40px;
+    height: 120px;
+  }
+
+  .tariffs-card {
+    padding: 30px 20px 10px 20px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+  }
+
+  .container-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tariffs__background {
+    top: 40px;
+    right: 20px;
+    height: 110px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tariffs__background {
+    top: 65px;
+    right: 15px;
+  }
+}
