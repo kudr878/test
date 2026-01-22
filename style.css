@@ -251,6 +251,9 @@ body {
     height: 120px;
   }
 
+  .tariffs__additional{
+    padding: 25px 20px;
+  }
   .tariffs-card {
     padding: 30px 20px 10px 20px;
   }
