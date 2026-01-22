@@ -75,18 +75,27 @@ body {
 }
 
 .option-row__icon--white {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
 }
 
-.option-row__check--secondary:hover,
-.option-row__check--secondary:active {
-  .option-row__icon--white {
-    display: block;
-  }
+.option-row__icon--blue {
+  opacity: 1;
+}
 
-  .option-row__icon--blue {
-    display: none;
-  }
+.option-row__check--secondary:hover .option-row__icon--white,
+.option-row__check--secondary:active .option-row__icon--white {
+
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.option-row__check--secondary:hover .option-row__icon--blue,
+.option-row__check--secondary:active .option-row__icon--blue {
+  visibility: hidden;
+  opacity: 0;
+
 }
 
 .option-row__check--secondary:hover {
@@ -118,6 +127,7 @@ body {
   width: 20px;
   height: 20px;
   transition: all .3s ease;
+  position: absolute;;
 }
 
 .tariffs {
@@ -251,9 +261,10 @@ body {
     height: 120px;
   }
 
-  .tariffs__additional{
+  .tariffs__additional {
     padding: 25px 20px;
   }
+
   .tariffs-card {
     padding: 30px 20px 10px 20px;
   }
