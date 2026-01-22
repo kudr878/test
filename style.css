@@ -112,8 +112,6 @@ body {
   mask: url("assets/plus.svg") no-repeat center;
 }
 
-
-
 .tariffs {
   position: relative;
 }
@@ -232,6 +230,10 @@ body {
 
   .container-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .container-grid--break> :nth-child(3) {
+    grid-column: 1 / -1;
   }
 
   .tariffs__background {
