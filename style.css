@@ -55,7 +55,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--color-text-gray);
   width: 100%;
 }
 
@@ -63,32 +62,41 @@ body {
   background-color: var(--color-blue);
 }
 
-.option-row__check:hover {
-  filter: brightness(1.2);
-}
-
-.option-row__icon {
-  background-color: white;
-}
-
 .option-row__check--secondary {
   background-color: white;
 }
 
-.option-row__check--secondary .option-row__icon {
-  background-color: var(--color-blue);
-}
-
-.option-row__check--secondary:hover {
-  background: var(--color-blue);
+.option-row__check:hover {
+  filter: brightness(1.2);
 }
 
 .option-row__check:active {
-  background: color-mix(in srgb, var(--color-blue), black 20%);
+  background: color-mix(in srgb, var(--color-blue), black 10%);
 }
 
-.option-row__check--secondary:hover .option-row__icon {
-  background-color: white;
+.option-row__icon--white {
+  display: none;
+}
+
+.option-row__check--secondary:hover,
+.option-row__check--secondary:active {
+  .option-row__icon--white {
+    display: block;
+  }
+
+  .option-row__icon--blue {
+    display: none;
+  }
+}
+
+.option-row__check--secondary:hover {
+  background-color: var(--color-blue);
+  filter: brightness(1.2);
+}
+
+.option-row__check--secondary:active {
+  background-color: var(--color-blue);
+  background: color-mix(in srgb, var(--color-blue), black 10%);
 }
 
 .option-row__left {
@@ -109,7 +117,7 @@ body {
 .option-row__icon {
   width: 20px;
   height: 20px;
-  mask: url("assets/plus.svg") no-repeat center;
+  transition: all .3s ease;
 }
 
 .tariffs {
@@ -125,7 +133,7 @@ body {
 }
 
 .tariffs__title {
-  font-size: 46px;
+  font-size: 44px;
   margin-bottom: 40px;
 }
 
@@ -150,6 +158,7 @@ body {
 
 .tariffs-card__title {
   margin-bottom: 32px;
+  font-size: 19px;
 }
 
 .tariffs-card__price {
